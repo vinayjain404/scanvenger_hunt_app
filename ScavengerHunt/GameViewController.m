@@ -22,7 +22,6 @@
     UIImageView *imageView;
     UIImageView *nextImageView;
     FBProfilePictureView *opponentImageView;
-    FBProfilePictureView *myImageView;
     UIImageView *previewImageView;
     
     ConfirmationViewController *confirmationViewController;
@@ -31,7 +30,7 @@
 
 @implementation GameViewController
 
-@synthesize delegate, imageURL, player1ProfileID, player2ProfileID;
+@synthesize delegate, imageURL, opponentID;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -56,7 +55,7 @@
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor mainBackgroundColor]];
     
-    opponentImageView = [[FBProfilePictureView alloc] initWithProfileID:self.player2ProfileID pictureCropping:FBProfilePictureCroppingSquare];
+    opponentImageView = [[FBProfilePictureView alloc] initWithProfileID:self.opponentID pictureCropping:FBProfilePictureCroppingSquare];
     //[opponenPhotoView setImageWithURL:];
     [opponentImageView setContentMode:UIViewContentModeScaleAspectFit];
     [opponentImageView setBackgroundColor:[UIColor grayColor]];
@@ -71,15 +70,9 @@
     //[nextImageView setImageWithURL:];
     [nextImageView setBackgroundColor:[UIColor grayColor]];
     
-    myImageView = [[FBProfilePictureView alloc] initWithProfileID:self.player1ProfileID pictureCropping:FBProfilePictureCroppingSquare];
-    [myImageView setContentMode:UIViewContentModeScaleAspectFit];
-    //[myImageView setImageWithURL:];
-    [myImageView setBackgroundColor:[UIColor grayColor]];
-    
     [self.view addSubview:imageView];
     [self.view addSubview:opponentImageView];
     [self.view addSubview:nextImageView];
-    [self.view addSubview:myImageView];
     [self minimize: NO];
 	// Do any additional setup after loading the view.
 }
@@ -93,9 +86,7 @@
         [opponentImageView setFrame:CGRectMake(0.0f, 0.0f, 30.0f, 30.0f)];
         [imageView setFrame:CGRectMake(40.0f, 0.0f, 50.0f, 50.0f)];
         [nextImageView setFrame:CGRectMake(100.0f, 0.0f, 50.0f, 50.0f)];
-        [myImageView setFrame:CGRectMake(160.0f, 0.0f, 30.0f, 30.0f)];
         [nextImageView setAlpha:1.0f];
-        [myImageView setAlpha:1.0f];
         [previewImageView setAlpha: 0.0f];
     };
     
@@ -123,7 +114,6 @@
         [opponentImageView setFrame:CGRectMake(260.0f, 0.0f, 60.0f, 60.0f)];
         [imageView setFrame:[[UIScreen mainScreen] bounds]];
         [nextImageView setAlpha:0.0f];
-        [myImageView setAlpha:0.0f];
     } completion:^(BOOL finished) {
         [self showNavigation];
     }];
