@@ -9,6 +9,8 @@
 #import "RootViewController.h"
 #import "UIColor+Hunt.h"
 
+#define SERVER @"http://ec2-23-21-38-14.compute-1.amazonaws.com:9000/"
+
 @interface RootViewController ()
 {
     MatchmakerViewController *matchmakerViewController;
@@ -50,6 +52,26 @@
     [scrollView addSubview:[matchmakerViewController view]];
     [scrollView setContentSize:CGSizeMake(320.0f, 1000.0f)];
 }
+
+/*
+- (void)loadGames
+{
+    NSURLRequest* req = [NSURLRequest requestWithURL:[NSString stringWithFormat:@"%@/list_games/%@", SERVER, facebookId]];
+    
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    
+    [NSURLConnection sendAsynchronousRequest:req queue:queue completionHandler:^(NSURLResponse* resp, NSData* data, NSError* err) {
+        if (([data length] > 0) && (!err))
+        {
+            NSError* error;
+            NSString *logStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            NSLog(@"%@", logStr);
+            [self performSelectorOnMainThread:@selector(setImages:) withObject:[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error] waitUntilDone:YES];
+            [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
+        }
+    }];
+}
+ */
 
 
 - (void)didReceiveMemoryWarning

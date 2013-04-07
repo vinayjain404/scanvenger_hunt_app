@@ -24,6 +24,11 @@
 		8B1B77901710B815005F6706 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B778F1710B815005F6706 /* RootViewController.m */; };
 		8B1B77931710BB39005F6706 /* MatchmakerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B77921710BB39005F6706 /* MatchmakerViewController.m */; };
 		8B1B779C1710D41F005F6706 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B779B1710D41F005F6706 /* GameViewController.m */; };
+		8BA0AF5A1710FBF0000A65E5 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA0AF591710FBF0000A65E5 /* FacebookSDK.framework */; };
+		8BA0AF651710FCA4000A65E5 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA0AF621710FCA3000A65E5 /* Accounts.framework */; };
+		8BA0AF661710FCA4000A65E5 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA0AF631710FCA3000A65E5 /* AdSupport.framework */; };
+		8BA0AF671710FCA4000A65E5 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA0AF641710FCA3000A65E5 /* Social.framework */; };
+		8BA0AF691710FCDC000A65E5 /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8BA0AF681710FCDC000A65E5 /* FacebookSDKResources.bundle */; };
 		8BC53AC21710DC2A00455867 /* UIColor+Hunt.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC53AC11710DC2A00455867 /* UIColor+Hunt.m */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +68,11 @@
 		8B1B77921710BB39005F6706 /* MatchmakerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchmakerViewController.m; sourceTree = "<group>"; };
 		8B1B779A1710D41E005F6706 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		8B1B779B1710D41F005F6706 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		8BA0AF591710FBF0000A65E5 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = "../facebook-ios-sdk/build/FacebookSDK.framework"; sourceTree = "<group>"; };
+		8BA0AF621710FCA3000A65E5 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		8BA0AF631710FCA3000A65E5 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		8BA0AF641710FCA3000A65E5 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		8BA0AF681710FCDC000A65E5 /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FacebookSDKResources.bundle; path = "../facebook-ios-sdk/build/FacebookSDK.framework/Versions/A/Resources/FacebookSDKResources.bundle"; sourceTree = "<group>"; };
 		8BC53AC01710DC2A00455867 /* UIColor+Hunt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hunt.h"; sourceTree = "<group>"; };
 		8BC53AC11710DC2A00455867 /* UIColor+Hunt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hunt.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,9 +82,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BA0AF651710FCA4000A65E5 /* Accounts.framework in Frameworks */,
+				8BA0AF661710FCA4000A65E5 /* AdSupport.framework in Frameworks */,
+				8BA0AF671710FCA4000A65E5 /* Social.framework in Frameworks */,
 				8B1B77591710B16C005F6706 /* UIKit.framework in Frameworks */,
 				8B1B775B1710B16C005F6706 /* Foundation.framework in Frameworks */,
 				8B1B775D1710B16C005F6706 /* CoreGraphics.framework in Frameworks */,
+				8BA0AF5A1710FBF0000A65E5 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +127,11 @@
 		8B1B77571710B16C005F6706 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8BA0AF621710FCA3000A65E5 /* Accounts.framework */,
+				8BA0AF631710FCA3000A65E5 /* AdSupport.framework */,
+				8BA0AF641710FCA3000A65E5 /* Social.framework */,
+				8BA0AF681710FCDC000A65E5 /* FacebookSDKResources.bundle */,
+				8BA0AF591710FBF0000A65E5 /* FacebookSDK.framework */,
 				8B1B77581710B16C005F6706 /* UIKit.framework */,
 				8B1B775A1710B16C005F6706 /* Foundation.framework */,
 				8B1B775C1710B16C005F6706 /* CoreGraphics.framework */,
@@ -254,6 +273,7 @@
 				8B1B776B1710B16D005F6706 /* Default.png in Resources */,
 				8B1B776D1710B16D005F6706 /* Default@2x.png in Resources */,
 				8B1B776F1710B16D005F6706 /* Default-568h@2x.png in Resources */,
+				8BA0AF691710FCDC000A65E5 /* FacebookSDKResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,9 +414,17 @@
 		8B1B77881710B16D005F6706 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../facebook-ios-sdk/build\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ScavengerHunt/ScavengerHunt-Prefix.pch";
 				INFOPLIST_FILE = "ScavengerHunt/ScavengerHunt-Info.plist";
+				OTHER_LDFLAGS = (
+					"-lsqlite3.0",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -405,9 +433,17 @@
 		8B1B77891710B16D005F6706 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../facebook-ios-sdk/build\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ScavengerHunt/ScavengerHunt-Prefix.pch";
 				INFOPLIST_FILE = "ScavengerHunt/ScavengerHunt-Info.plist";
+				OTHER_LDFLAGS = (
+					"-lsqlite3.0",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

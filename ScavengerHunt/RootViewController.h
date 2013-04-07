@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MatchmakerViewController.h"
 #import "GameViewController.h"
+#import <FacebookSDK/FacebookSDK.h>
 
 @interface RootViewController : UIViewController <MatchmakerDelegate, GameViewDelegate>
 
