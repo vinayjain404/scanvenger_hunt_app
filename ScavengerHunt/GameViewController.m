@@ -10,6 +10,7 @@
 #import "UIColor+Hunt.h"
 #import "ConfirmationViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import <FacebookSDK/FacebookSDK.h>
 
 #define ANIMATION_TIME .35f
 
@@ -20,8 +21,8 @@
     NSUInteger _index;
     UIImageView *imageView;
     UIImageView *nextImageView;
-    UIImageView *opponentImageView;
-    UIImageView *myImageView;
+    FBProfilePictureView *opponentImageView;
+    FBProfilePictureView *myImageView;
     UIImageView *previewImageView;
     
     ConfirmationViewController *confirmationViewController;
@@ -30,7 +31,7 @@
 
 @implementation GameViewController
 
-@synthesize delegate, imageURL;
+@synthesize delegate, imageURL, player1ProfileID, player2ProfileID;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -55,7 +56,7 @@
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor mainBackgroundColor]];
     
-    opponentImageView = [[UIImageView alloc] init];
+    opponentImageView = [[FBProfilePictureView alloc] initWithProfileID:self.player2ProfileID pictureCropping:FBProfilePictureCroppingSquare];
     //[opponenPhotoView setImageWithURL:];
     [opponentImageView setContentMode:UIViewContentModeScaleAspectFit];
     [opponentImageView setBackgroundColor:[UIColor grayColor]];
@@ -70,13 +71,13 @@
     //[nextImageView setImageWithURL:];
     [nextImageView setBackgroundColor:[UIColor grayColor]];
     
-    myImageView = [[UIImageView alloc] init];
+    myImageView = [[FBProfilePictureView alloc] initWithProfileID:self.player2ProfileID pictureCropping:FBProfilePictureCroppingSquare];
     [myImageView setContentMode:UIViewContentModeScaleAspectFit];
     //[myImageView setImageWithURL:];
     [myImageView setBackgroundColor:[UIColor grayColor]];
     
-    [self.view addSubview:opponentImageView];
     [self.view addSubview:imageView];
+    [self.view addSubview:opponentImageView];
     [self.view addSubview:nextImageView];
     [self.view addSubview:myImageView];
     [self minimize: NO];
@@ -119,7 +120,7 @@
     [cameraButton setHidden:NO];
     [UIView animateWithDuration:ANIMATION_TIME animations:^{
         [self.view setFrame:[[UIScreen mainScreen] bounds]];
-        [opponentImageView setFrame:CGRectMake(290.0f, 0.0f, 30.0f, 30.0f)];
+        [opponentImageView setFrame:CGRectMake(260.0f, 0.0f, 60.0f, 60.0f)];
         [imageView setFrame:[[UIScreen mainScreen] bounds]];
         [nextImageView setAlpha:0.0f];
         [myImageView setAlpha:0.0f];

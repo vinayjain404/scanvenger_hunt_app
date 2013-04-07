@@ -20,6 +20,8 @@
 
 @property(nonatomic,assign) id<GameViewDelegate> delegate;
 @property(nonatomic,copy) NSString* imageURL;
+@property(nonatomic,copy) NSString* player1ProfileID;
+@property(nonatomic,copy) NSString* player2ProfileID;
 
 - (id)initWithIndex:(NSUInteger)index;
 

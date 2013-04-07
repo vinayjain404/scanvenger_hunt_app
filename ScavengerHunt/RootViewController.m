@@ -99,12 +99,14 @@
 }
 
 - (void)addGame: (NSDictionary*) game {
-    [self addGame:game[@"id"] withImageURL:game[@"img_url"]];
+    [self addGame:game[@"id"] withImageURL:game[@"img_url"] withPlayer1:game[@"player1_id"] withPlayer2:game[@"player2_id"]];
 }
 
-- (void)addGame: (NSString*) gameId withImageURL: (NSString*) url {
+- (void)addGame: (NSString*) gameId withImageURL: (NSString*) url withPlayer1: (NSString*) player1ID withPlayer2: (NSString*)player2ID {
     GameViewController *gameViewController = [[GameViewController alloc] initWithIndex: gameIndex++];
     [gameViewController setImageURL: url];
+    [gameViewController setPlayer1ProfileID:player1ID];
+    [gameViewController setPlayer2ProfileID:player2ID];
     [gameViewController setDelegate:self];
     [games addObject:gameViewController];
     [scrollView addSubview:gameViewController.view];
