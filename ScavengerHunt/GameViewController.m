@@ -71,7 +71,7 @@
     //[nextImageView setImageWithURL:];
     [nextImageView setBackgroundColor:[UIColor grayColor]];
     
-    myImageView = [[FBProfilePictureView alloc] initWithProfileID:self.player2ProfileID pictureCropping:FBProfilePictureCroppingSquare];
+    myImageView = [[FBProfilePictureView alloc] initWithProfileID:self.player1ProfileID pictureCropping:FBProfilePictureCroppingSquare];
     [myImageView setContentMode:UIViewContentModeScaleAspectFit];
     //[myImageView setImageWithURL:];
     [myImageView setBackgroundColor:[UIColor grayColor]];
