@@ -23,8 +23,6 @@
 		8B1B77841710B16D005F6706 /* ScavengerHuntTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B77831710B16D005F6706 /* ScavengerHuntTests.m */; };
 		8B1B77901710B815005F6706 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B778F1710B815005F6706 /* RootViewController.m */; };
 		8B1B77931710BB39005F6706 /* MatchmakerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B77921710BB39005F6706 /* MatchmakerViewController.m */; };
-		8B1B77961710C224005F6706 /* ClueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B77951710C224005F6706 /* ClueViewController.m */; };
-		8B1B77991710C630005F6706 /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B77981710C62F005F6706 /* ResultsViewController.m */; };
 		8B1B779C1710D41F005F6706 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B779B1710D41F005F6706 /* GameViewController.m */; };
 		8BC53AC21710DC2A00455867 /* UIColor+Hunt.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC53AC11710DC2A00455867 /* UIColor+Hunt.m */; };
 /* End PBXBuildFile section */
@@ -63,10 +61,6 @@
 		8B1B778F1710B815005F6706 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		8B1B77911710BB39005F6706 /* MatchmakerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchmakerViewController.h; sourceTree = "<group>"; };
 		8B1B77921710BB39005F6706 /* MatchmakerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchmakerViewController.m; sourceTree = "<group>"; };
-		8B1B77941710C224005F6706 /* ClueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClueViewController.h; sourceTree = "<group>"; };
-		8B1B77951710C224005F6706 /* ClueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClueViewController.m; sourceTree = "<group>"; };
-		8B1B77971710C62D005F6706 /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsViewController.h; sourceTree = "<group>"; };
-		8B1B77981710C62F005F6706 /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsViewController.m; sourceTree = "<group>"; };
 		8B1B779A1710D41E005F6706 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		8B1B779B1710D41F005F6706 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		8BC53AC01710DC2A00455867 /* UIColor+Hunt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hunt.h"; sourceTree = "<group>"; };
@@ -134,14 +128,10 @@
 				8B1B775F1710B16C005F6706 /* Supporting Files */,
 				8B1B77671710B16C005F6706 /* AppDelegate.h */,
 				8B1B77681710B16C005F6706 /* AppDelegate.m */,
-				8B1B77941710C224005F6706 /* ClueViewController.h */,
-				8B1B77951710C224005F6706 /* ClueViewController.m */,
 				8B1B77911710BB39005F6706 /* MatchmakerViewController.h */,
 				8B1B77921710BB39005F6706 /* MatchmakerViewController.m */,
 				8B1B778E1710B815005F6706 /* RootViewController.h */,
 				8B1B778F1710B815005F6706 /* RootViewController.m */,
-				8B1B77971710C62D005F6706 /* ResultsViewController.h */,
-				8B1B77981710C62F005F6706 /* ResultsViewController.m */,
 				8B1B779A1710D41E005F6706 /* GameViewController.h */,
 				8B1B779B1710D41F005F6706 /* GameViewController.m */,
 			);
@@ -302,8 +292,6 @@
 				8B1B77691710B16C005F6706 /* AppDelegate.m in Sources */,
 				8B1B77901710B815005F6706 /* RootViewController.m in Sources */,
 				8B1B77931710BB39005F6706 /* MatchmakerViewController.m in Sources */,
-				8B1B77961710C224005F6706 /* ClueViewController.m in Sources */,
-				8B1B77991710C630005F6706 /* ResultsViewController.m in Sources */,
 				8B1B779C1710D41F005F6706 /* GameViewController.m in Sources */,
 				8BC53AC21710DC2A00455867 /* UIColor+Hunt.m in Sources */,
 			);
