@@ -9,16 +9,16 @@
 #import "RootViewController.h"
 #import "UIColor+Hunt.h"
 
-#define SERVER @"http://ec2-23-21-38-14.compute-1.amazonaws.com:9000/"
+#define SERVER @"http://ec2-23-21-38-14.compute-1.amazonaws.com:9000"
 
 @interface RootViewController ()
 {
     MatchmakerViewController *matchmakerViewController;
     FBFriendPickerViewController *friendPickerController;
     
+    NSUInteger gameIndex;
     NSMutableArray* games;
-    NSString *accessType;
-    NSString *accessToken;
+    NSString *userID;
     UIScrollView *scrollView;
 }
 @end
@@ -29,7 +29,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        gameIndex = 1;
     }
     return self;
 }
@@ -44,12 +44,7 @@
     matchmakerViewController = [[MatchmakerViewController alloc] init];
     [matchmakerViewController setDelegate:self];
     
-    GameViewController *gameViewController = [[GameViewController alloc] init];
-    [gameViewController setDelegate:self];
-    [games addObject:gameViewController];
-    
     [self.view addSubview:scrollView];
-    [scrollView addSubview:gameViewController.view];
     [scrollView addSubview:[matchmakerViewController view]];
     [scrollView setContentSize:CGSizeMake(320.0f, 1000.0f)];
     if (!FBSession.activeSession.isOpen) {
@@ -60,17 +55,21 @@
             switch (state) {
                 case FBSessionStateClosedLoginFailed:
                 {
-                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                                        message:error.localizedDescription
-                                                                       delegate:nil
-                                                              cancelButtonTitle:@"OK"
-                                                              otherButtonTitles:nil];
-                    [alertView show];
+                    // TODO: Show login error.
                 }
                     break;
                 case FBSessionStateOpen:
-                    // Get game list
+                {
+                    [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id<FBGraphUser> user, NSError *error) {
+                        
+                        if (!error) {
+                            userID = user[@"id"];
+                            // Load games
+                            [self loadGames];
+                        }
+                    }];
                     break;
+                }
                 default:
                     break;
             }
@@ -78,10 +77,10 @@
     }
 }
 
-/*
 - (void)loadGames
 {
-    NSURLRequest* req = [NSURLRequest requestWithURL:[NSString stringWithFormat:@"%@/list_games/%@", SERVER, facebookId]];
+    NSString *url = [NSString stringWithFormat:@"%@/list_games/%@/", SERVER, userID];
+    NSURLRequest* req = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
     
@@ -89,15 +88,28 @@
         if (([data length] > 0) && (!err))
         {
             NSError* error;
-            NSString *logStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-            NSLog(@"%@", logStr);
-            [self performSelectorOnMainThread:@selector(setImages:) withObject:[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error] waitUntilDone:YES];
-            [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
+            NSDictionary *response = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+            NSArray *gamesArray = response[@"games"];
+            for (NSDictionary* game in gamesArray) {
+                NSLog(@"%@", game);
+                [self performSelectorOnMainThread:@selector(addGame:) withObject:game waitUntilDone:NO];
+            }
         }
     }];
 }
- */
 
+- (void)addGame: (NSDictionary*) game {
+    [self addGame:game[@"id"] withImageURL:game[@"img_url"]];
+}
+
+- (void)addGame: (NSString*) gameId withImageURL: (NSString*) url {
+    GameViewController *gameViewController = [[GameViewController alloc] initWithIndex: gameIndex++];
+    [gameViewController setImageURL: url];
+    [gameViewController setDelegate:self];
+    [games addObject:gameViewController];
+    [scrollView addSubview:gameViewController.view];
+    [self.view setNeedsLayout];
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -111,9 +123,9 @@
         friendPickerController = [[FBFriendPickerViewController alloc] init];
         [friendPickerController setTitle:@"Challenge a Friend"];
         [friendPickerController setAllowsMultipleSelection: NO];
+        [friendPickerController setItemPicturesEnabled: YES];
         [friendPickerController setDelegate: self];
     }
-    
     [friendPickerController loadData];
     [friendPickerController clearSelection];
     
@@ -136,18 +148,24 @@
 }
 
 - (void)facebookViewControllerDoneWasPressed:(id)sender {
-/*     NSMutableString *text = [[NSMutableString alloc] init];
-    
-    // we pick up the users from the selection, and create a string that we use to update the text view
-    // at the bottom of the display; note that self.selection is a property inherited from our base class
-   for (id<FBGraphUser> user in self.friendPickerController.selection) {
-        if ([text length]) {
-            [text appendString:@", "];
-        }
-        [text appendString:user.name];
+    if (friendPickerController.selection.count == 1) {
+        NSMutableURLRequest* req = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/create_game/", SERVER]]];
+        [req setHTTPMethod:@"POST"];
+        NSString *postData = [NSString stringWithFormat:@"player1_id=%@&player2_id=%@", userID, friendPickerController.selection[0][@"id"]];
+        [req setHTTPBody: [postData  dataUsingEncoding:NSUTF8StringEncoding]];
+        
+        NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+        
+        [NSURLConnection sendAsynchronousRequest:req queue:queue completionHandler:^(NSURLResponse* resp, NSData* data, NSError* err) {
+            if (([data length] > 0) && (!err))
+            {
+                NSString *logStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                NSLog(@"%@", logStr);
+                //           [self performSelectorOnMainThread:@selector(setImages:) withObject:[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error] waitUntilDone:YES];
+                // Add game and start it using gameId
+            }
+        }];
     }
-    [self fillTextBoxAndDismiss:text.length > 0 ? text : @"<None>"];
- */
     [friendPickerController dismissViewControllerAnimated:YES completion:nil];
 }
 

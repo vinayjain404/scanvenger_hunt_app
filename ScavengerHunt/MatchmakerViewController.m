@@ -28,7 +28,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.view setFrame:CGRectMake(50.0f, 100.0f, 100.0f, 50.0f)];
+    CGRect frame = CGRectMake(0.0f, 10.0f, 100.0f, 50.0f);
+    [self.view setFrame:frame];
 	// Do any additional setup after loading the view.
     UIButton *startButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 100.0f, 50.0f)];
     

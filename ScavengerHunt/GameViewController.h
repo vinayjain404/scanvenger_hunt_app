@@ -19,5 +19,8 @@
 @interface GameViewController : UIViewController <UIGestureRecognizerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property(nonatomic,assign) id<GameViewDelegate> delegate;
+@property(nonatomic,copy) NSString* imageURL;
+
+- (id)initWithIndex:(NSUInteger)index;
 
 @end
