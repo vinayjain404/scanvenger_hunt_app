@@ -14,6 +14,7 @@
 @interface RootViewController ()
 {
     MatchmakerViewController *matchmakerViewController;
+    FBFriendPickerViewController *friendPickerController;
     
     NSMutableArray* games;
     NSString *accessType;
@@ -51,6 +52,30 @@
     [scrollView addSubview:gameViewController.view];
     [scrollView addSubview:[matchmakerViewController view]];
     [scrollView setContentSize:CGSizeMake(320.0f, 1000.0f)];
+    if (!FBSession.activeSession.isOpen) {
+        // if the session is closed, then we open it here, and establish a handler for state changes
+        [FBSession.activeSession openWithCompletionHandler:^(FBSession *session,
+                                                             FBSessionState state,
+                                                             NSError *error) {
+            switch (state) {
+                case FBSessionStateClosedLoginFailed:
+                {
+                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                                        message:error.localizedDescription
+                                                                       delegate:nil
+                                                              cancelButtonTitle:@"OK"
+                                                              otherButtonTitles:nil];
+                    [alertView show];
+                }
+                    break;
+                case FBSessionStateOpen:
+                    // Get game list
+                    break;
+                default:
+                    break;
+            }
+        }];
+    }
 }
 
 /*
@@ -82,6 +107,20 @@
 
 - (void)start
 {
+    if (!friendPickerController) {
+        friendPickerController = [[FBFriendPickerViewController alloc] init];
+        [friendPickerController setTitle:@"Challenge a Friend"];
+        [friendPickerController setAllowsMultipleSelection: NO];
+        [friendPickerController setDelegate: self];
+    }
+    
+    [friendPickerController loadData];
+    [friendPickerController clearSelection];
+    
+    // iOS 5.0+ apps should use [UIViewController presentViewController:animated:completion:]
+    // rather than this deprecated method, but we want our samples to run on iOS 4.x as well.
+    [self presentViewController:friendPickerController animated:YES completion:NO];
+    // Find users
 }
 
 - (void)show: (GameViewController*) gameViewController
@@ -90,5 +129,39 @@
     [scrollView addSubview:gameViewController.view];
 }
 
+#pragma mark FB UI handlers
+
+- (void)friendPickerViewControllerSelectionDidChange:(FBFriendPickerViewController *)friendPicker {
+    
+}
+
+- (void)facebookViewControllerDoneWasPressed:(id)sender {
+/*     NSMutableString *text = [[NSMutableString alloc] init];
+    
+    // we pick up the users from the selection, and create a string that we use to update the text view
+    // at the bottom of the display; note that self.selection is a property inherited from our base class
+   for (id<FBGraphUser> user in self.friendPickerController.selection) {
+        if ([text length]) {
+            [text appendString:@", "];
+        }
+        [text appendString:user.name];
+    }
+    [self fillTextBoxAndDismiss:text.length > 0 ? text : @"<None>"];
+ */
+    [friendPickerController dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)facebookViewControllerCancelWasPressed:(id)sender {
+    [friendPickerController dismissViewControllerAnimated:YES completion:nil];
+//    [self fillTextBoxAndDismiss:@"<Cancelled>"];
+    
+}
+/*
+- (void)fillTextBoxAndDismiss:(NSString *)text {
+    self.selectedFriendsView.text = text;
+    
+    [self dismissModalViewControllerAnimated:YES];
+}
+*/
 
 @end

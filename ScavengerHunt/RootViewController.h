@@ -11,6 +11,6 @@
 #import "GameViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
 
-@interface RootViewController : UIViewController <MatchmakerDelegate, GameViewDelegate>
+@interface RootViewController : UIViewController <MatchmakerDelegate, GameViewDelegate, FBFriendPickerDelegate, FBViewControllerDelegate>
 
 @end
