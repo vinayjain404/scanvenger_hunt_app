@@ -10,6 +10,10 @@
 		8B01167B17113C3D00FC2FB4 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B01167A17113C3D00FC2FB4 /* SDWebImage.framework */; };
 		8B01167D17113C9300FC2FB4 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B01167C17113C9300FC2FB4 /* ImageIO.framework */; };
 		8B011680171145F100FC2FB4 /* ConfirmationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B01167F171145F100FC2FB4 /* ConfirmationViewController.m */; };
+		8B0116841711A13000FC2FB4 /* newgame@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B0116831711A13000FC2FB4 /* newgame@2x.png */; };
+		8B0116861711ACE300FC2FB4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B0116851711ACE200FC2FB4 /* QuartzCore.framework */; };
+		8B01168A1711AFFE00FC2FB4 /* StartGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0116881711AFFD00FC2FB4 /* StartGameViewController.m */; };
+		8B01168B1711AFFE00FC2FB4 /* StartGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B0116891711AFFE00FC2FB4 /* StartGameViewController.xib */; };
 		8B1B77591710B16C005F6706 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B1B77581710B16C005F6706 /* UIKit.framework */; };
 		8B1B775B1710B16C005F6706 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B1B775A1710B16C005F6706 /* Foundation.framework */; };
 		8B1B775D1710B16C005F6706 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B1B775C1710B16C005F6706 /* CoreGraphics.framework */; };
@@ -33,6 +37,15 @@
 		8BA0AF671710FCA4000A65E5 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA0AF641710FCA3000A65E5 /* Social.framework */; };
 		8BA0AF691710FCDC000A65E5 /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8BA0AF681710FCDC000A65E5 /* FacebookSDKResources.bundle */; };
 		8BA0AF6D171101F3000A65E5 /* FPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA0AF6C171101F3000A65E5 /* FPViewController.m */; };
+		8BAFA62D1711C8F60098A050 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAFA62C1711C8F60098A050 /* UIImage+Resize.m */; };
+		8BAFA6401711CDCA0098A050 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAFA63F1711CDCA0098A050 /* Base64.m */; };
+		8BAFA6471711D5ED0098A050 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BAFA6411711D5ED0098A050 /* bg.png */; };
+		8BAFA6481711D5ED0098A050 /* btn_choose_custom.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BAFA6421711D5ED0098A050 /* btn_choose_custom.png */; };
+		8BAFA6491711D5ED0098A050 /* btn_mid_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BAFA6431711D5ED0098A050 /* btn_mid_camera.png */; };
+		8BAFA64A1711D5ED0098A050 /* btn_send.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BAFA6441711D5ED0098A050 /* btn_send.png */; };
+		8BAFA64B1711D5ED0098A050 /* btn_take_pic.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BAFA6451711D5ED0098A050 /* btn_take_pic.png */; };
+		8BAFA64C1711D5ED0098A050 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BAFA6461711D5ED0098A050 /* camera.png */; };
+		8BAFA64E1711D5F70098A050 /* welcome.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BAFA64D1711D5F70098A050 /* welcome.png */; };
 		8BC53AC21710DC2A00455867 /* UIColor+Hunt.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC53AC11710DC2A00455867 /* UIColor+Hunt.m */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +64,11 @@
 		8B01167C17113C9300FC2FB4 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		8B01167E171145F100FC2FB4 /* ConfirmationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmationViewController.h; sourceTree = "<group>"; };
 		8B01167F171145F100FC2FB4 /* ConfirmationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmationViewController.m; sourceTree = "<group>"; };
+		8B0116831711A13000FC2FB4 /* newgame@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "newgame@2x.png"; sourceTree = "<group>"; };
+		8B0116851711ACE200FC2FB4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		8B0116871711AFFC00FC2FB4 /* StartGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartGameViewController.h; sourceTree = "<group>"; };
+		8B0116881711AFFD00FC2FB4 /* StartGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartGameViewController.m; sourceTree = "<group>"; };
+		8B0116891711AFFE00FC2FB4 /* StartGameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartGameViewController.xib; sourceTree = "<group>"; };
 		8B1B77551710B16C005F6706 /* ScavengerHunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScavengerHunt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B1B77581710B16C005F6706 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8B1B775A1710B16C005F6706 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -83,6 +101,17 @@
 		8BA0AF681710FCDC000A65E5 /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FacebookSDKResources.bundle; path = "../facebook-ios-sdk/build/FacebookSDK.framework/Versions/A/Resources/FacebookSDKResources.bundle"; sourceTree = "<group>"; };
 		8BA0AF6B171101F3000A65E5 /* FPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPViewController.h; sourceTree = "<group>"; };
 		8BA0AF6C171101F3000A65E5 /* FPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPViewController.m; sourceTree = "<group>"; };
+		8BAFA62B1711C8F60098A050 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
+		8BAFA62C1711C8F60098A050 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
+		8BAFA63E1711CDCA0098A050 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
+		8BAFA63F1711CDCA0098A050 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
+		8BAFA6411711D5ED0098A050 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
+		8BAFA6421711D5ED0098A050 /* btn_choose_custom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_choose_custom.png; sourceTree = "<group>"; };
+		8BAFA6431711D5ED0098A050 /* btn_mid_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_mid_camera.png; sourceTree = "<group>"; };
+		8BAFA6441711D5ED0098A050 /* btn_send.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_send.png; sourceTree = "<group>"; };
+		8BAFA6451711D5ED0098A050 /* btn_take_pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_take_pic.png; sourceTree = "<group>"; };
+		8BAFA6461711D5ED0098A050 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		8BAFA64D1711D5F70098A050 /* welcome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcome.png; sourceTree = "<group>"; };
 		8BC53AC01710DC2A00455867 /* UIColor+Hunt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hunt.h"; sourceTree = "<group>"; };
 		8BC53AC11710DC2A00455867 /* UIColor+Hunt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hunt.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B0116861711ACE300FC2FB4 /* QuartzCore.framework in Frameworks */,
 				8B01167D17113C9300FC2FB4 /* ImageIO.framework in Frameworks */,
 				8BA0AF651710FCA4000A65E5 /* Accounts.framework in Frameworks */,
 				8BA0AF661710FCA4000A65E5 /* AdSupport.framework in Frameworks */,
@@ -117,6 +147,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B0116811711A13000FC2FB4 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				8B0116821711A13000FC2FB4 /* images */,
+			);
+			path = resources;
+			sourceTree = SOURCE_ROOT;
+		};
+		8B0116821711A13000FC2FB4 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				8BAFA64D1711D5F70098A050 /* welcome.png */,
+				8BAFA6411711D5ED0098A050 /* bg.png */,
+				8BAFA6421711D5ED0098A050 /* btn_choose_custom.png */,
+				8BAFA6431711D5ED0098A050 /* btn_mid_camera.png */,
+				8BAFA6441711D5ED0098A050 /* btn_send.png */,
+				8BAFA6451711D5ED0098A050 /* btn_take_pic.png */,
+				8BAFA6461711D5ED0098A050 /* camera.png */,
+				8B0116831711A13000FC2FB4 /* newgame@2x.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		8B1B774C1710B16B005F6706 = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +192,7 @@
 		8B1B77571710B16C005F6706 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8B0116851711ACE200FC2FB4 /* QuartzCore.framework */,
 				8B01167C17113C9300FC2FB4 /* ImageIO.framework */,
 				8B01167A17113C3D00FC2FB4 /* SDWebImage.framework */,
 				8BA0AF621710FCA3000A65E5 /* Accounts.framework */,
@@ -157,6 +211,8 @@
 		8B1B775E1710B16C005F6706 /* ScavengerHunt */ = {
 			isa = PBXGroup;
 			children = (
+				8BAFA63D1711CDCA0098A050 /* Base64 */,
+				8B0116811711A13000FC2FB4 /* resources */,
 				8BA0AF6A171101E2000A65E5 /* Facebook */,
 				8BC53ABF1710DBE000455867 /* Categories */,
 				8B1B775F1710B16C005F6706 /* Supporting Files */,
@@ -170,6 +226,9 @@
 				8B1B77921710BB39005F6706 /* MatchmakerViewController.m */,
 				8B1B778E1710B815005F6706 /* RootViewController.h */,
 				8B1B778F1710B815005F6706 /* RootViewController.m */,
+				8B0116871711AFFC00FC2FB4 /* StartGameViewController.h */,
+				8B0116881711AFFD00FC2FB4 /* StartGameViewController.m */,
+				8B0116891711AFFE00FC2FB4 /* StartGameViewController.xib */,
 			);
 			path = ScavengerHunt;
 			sourceTree = "<group>";
@@ -216,11 +275,22 @@
 			name = Facebook;
 			sourceTree = "<group>";
 		};
+		8BAFA63D1711CDCA0098A050 /* Base64 */ = {
+			isa = PBXGroup;
+			children = (
+				8BAFA63E1711CDCA0098A050 /* Base64.h */,
+				8BAFA63F1711CDCA0098A050 /* Base64.m */,
+			);
+			path = Base64;
+			sourceTree = "<group>";
+		};
 		8BC53ABF1710DBE000455867 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
 				8BC53AC01710DC2A00455867 /* UIColor+Hunt.h */,
 				8BC53AC11710DC2A00455867 /* UIColor+Hunt.m */,
+				8BAFA62B1711C8F60098A050 /* UIImage+Resize.h */,
+				8BAFA62C1711C8F60098A050 /* UIImage+Resize.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -300,6 +370,15 @@
 				8B1B776D1710B16D005F6706 /* Default@2x.png in Resources */,
 				8B1B776F1710B16D005F6706 /* Default-568h@2x.png in Resources */,
 				8BA0AF691710FCDC000A65E5 /* FacebookSDKResources.bundle in Resources */,
+				8B0116841711A13000FC2FB4 /* newgame@2x.png in Resources */,
+				8B01168B1711AFFE00FC2FB4 /* StartGameViewController.xib in Resources */,
+				8BAFA6471711D5ED0098A050 /* bg.png in Resources */,
+				8BAFA6481711D5ED0098A050 /* btn_choose_custom.png in Resources */,
+				8BAFA6491711D5ED0098A050 /* btn_mid_camera.png in Resources */,
+				8BAFA64A1711D5ED0098A050 /* btn_send.png in Resources */,
+				8BAFA64B1711D5ED0098A050 /* btn_take_pic.png in Resources */,
+				8BAFA64C1711D5ED0098A050 /* camera.png in Resources */,
+				8BAFA64E1711D5F70098A050 /* welcome.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +420,9 @@
 				8B1B779C1710D41F005F6706 /* GameViewController.m in Sources */,
 				8BC53AC21710DC2A00455867 /* UIColor+Hunt.m in Sources */,
 				8B011680171145F100FC2FB4 /* ConfirmationViewController.m in Sources */,
+				8B01168A1711AFFE00FC2FB4 /* StartGameViewController.m in Sources */,
+				8BAFA62D1711C8F60098A050 /* UIImage+Resize.m in Sources */,
+				8BAFA6401711CDCA0098A050 /* Base64.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

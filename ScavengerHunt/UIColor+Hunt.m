@@ -10,12 +10,15 @@
 
 static UIColor* mainBackgroundColor;
 static UIColor* viewBackgroundColor;
+static UIColor* navColor;
+static UIColor* cellColor;
+static UIColor* innerCellColor;
 
 @implementation UIColor (Hunt)
 
 + (UIColor*)mainBackgroundColor {
     if (!mainBackgroundColor) {
-        mainBackgroundColor = [UIColor colorWithRed:.95f green:.95f blue:1.0f alpha:1.0f];
+        mainBackgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg"]];
     }
     
     return mainBackgroundColor;
@@ -27,6 +30,30 @@ static UIColor* viewBackgroundColor;
     }
     
     return viewBackgroundColor;
+}
+
++ (UIColor*)navColor {
+    if (!navColor) {
+        navColor = [UIColor colorWithRed:.153f green:.768f blue:.824f alpha:1.0f];
+    }
+    
+    return navColor;
+}
+
++ (UIColor*)cellColor {
+    if (!cellColor) {
+        cellColor = [UIColor colorWithRed:.67f green:.875f blue:.902f alpha:1.0f];
+    }
+    
+    return cellColor;
+}
+
++ (UIColor*)innerCellColor {
+    if (!innerCellColor) {
+        innerCellColor = [UIColor colorWithRed:.67f green:.875f blue:.902f alpha:1.0f];
+    }
+    
+    return innerCellColor;
 }
 
 @end

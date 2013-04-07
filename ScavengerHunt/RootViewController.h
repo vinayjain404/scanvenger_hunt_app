@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MatchmakerViewController.h"
 #import "GameViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
 
-@interface RootViewController : UIViewController <MatchmakerDelegate, GameViewDelegate, FBFriendPickerDelegate, FBViewControllerDelegate>
+@interface RootViewController : UIViewController <GameViewDelegate, FBFriendPickerDelegate, FBViewControllerDelegate>
+
+-(void)submitPhoto: (UIImage*) image forGame: (NSString*) gameID;
+-(void)matchPhoto: (UIImage*) image forGame: (NSString*) gameID;
+
+@property (nonatomic, copy) NSString* userID;
 
 @end

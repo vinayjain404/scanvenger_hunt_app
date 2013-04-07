@@ -8,6 +8,11 @@
 
 #import "AppDelegate.h"
 #import "RootViewController.h"
+#import "UIColor+Hunt.h"
+
+@interface AppDelegate() {
+}
+@end
 
 @implementation AppDelegate
 
@@ -15,11 +20,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [[UINavigationBar appearance] setTitleTextAttributes:@{UITextAttributeFont: [UIFont fontWithName:@"AmericanTypewriter" size:20.0f]}];
+    [[UINavigationBar appearance] setTintColor:[UIColor navColor]];
+    [[UILabel appearance] setFont:[UIFont fontWithName:@"AmericanTypewriter" size:20.0f]];
+    [[UIToolbar appearance] setTintColor:[UIColor navColor]];
+    
+    // TODO: Clean this garbage up.
+    self.navController=[[UINavigationController alloc] init];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.rootViewController = [[RootViewController alloc] init];
-    self.window.rootViewController = self.rootViewController;
-    self.window.backgroundColor = [UIColor whiteColor];
+    [self.navController pushViewController:self.rootViewController animated:NO];
+    //self.window.rootViewController = self.rootViewController;
+    self.window.rootViewController = self.navController;
+    //[self.window addSubview:navController.view];
     [self.window makeKeyAndVisible];
     return YES;
 }

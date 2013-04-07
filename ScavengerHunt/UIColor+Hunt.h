@@ -12,5 +12,9 @@
 
 + (UIColor*) mainBackgroundColor;
 + (UIColor*) viewBackgroundColor;
++ (UIColor*) navColor;
++ (UIColor*) cellColor;
++ (UIColor*) innerCellColor;
+
 
 @end
